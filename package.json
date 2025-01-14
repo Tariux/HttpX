@@ -3,6 +3,15 @@
     "dgram": "^1.0.1",
     "node-addon-api": "^8.3.0"
   },
+  "scripts": {
+    "cert": "openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.crt -days 365 -nodes -subj \"/CN=localhost\"",
+    "clean": "npx node-gyp clean",
+    "configure": "npx node-gyp configure",
+    "build": "npx node-gyp build --verbose"
+  },
+  "author": "Tariux",
+  "license": "MIT",
+  "keywords": ["http"],
   "devDependencies": {
     "node-gyp": "^11.0.0"
   }
